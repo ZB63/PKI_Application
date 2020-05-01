@@ -1,4 +1,4 @@
-package com.pki.PKI;
+package com.pki.PKI.configuration;
 
 import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth2Sso;
 import org.springframework.context.annotation.Configuration;
