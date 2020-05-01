@@ -29,4 +29,44 @@ public class User {
 
     @Column(name="counter")
     private Long counter;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getJoined() {
+        return joined;
+    }
+
+    public void setJoined(String joined) {
+        this.joined = joined;
+    }
+
+    public String getLastvisit() {
+        return lastvisit;
+    }
+
+    public void setLastvisit(String lastvisit) {
+        this.lastvisit = lastvisit;
+    }
+
+    public Long getCounter() {
+        return counter;
+    }
+
+    public void setCounter(Long counter) {
+        this.counter = counter;
+    }
 }
