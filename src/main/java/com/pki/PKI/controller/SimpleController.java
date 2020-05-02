@@ -42,7 +42,7 @@ public class SimpleController {
 
         model.addAttribute("email", email);
         model.addAttribute("users", users);
-        
+
         return "content";
     }
 
