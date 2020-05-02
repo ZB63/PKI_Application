@@ -8,6 +8,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,7 +30,7 @@ public class SimpleController {
     }
 
     @GetMapping(value = "/content")
-    public String user(Principal principal) throws IOException {
+    public String user(Principal principal, ModelMap model) throws IOException {
 
         ObjectMapper mapper = new ObjectMapper();
         String user = mapper.writeValueAsString(principal);
@@ -39,12 +40,9 @@ public class SimpleController {
         String email = user.substring(index1+8,index2-3);
         List<User> users = userRepository.findAll();
 
-        ModelAndView model = new ModelAndView("content");
-
-        model.addObject("email", email);
-        model.addObject("users", users);
-
-        //return "Zalogowano jako: " + email + "<br/><a href = \"logout\">Wyloguj!</a>";
+        model.addAttribute("email", email);
+        model.addAttribute("users", users);
+        
         return "content";
     }
 
