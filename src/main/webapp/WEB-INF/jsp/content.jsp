@@ -3,22 +3,14 @@
 <body>
 	<h2>Spring MVC and List Example</h2>
 
-	<c:if test="${not empty email}">
+    <h1>Witaj ${email}!</h1>
 
-        <h1>Witaj ${email}!</h1>
+	<ul>
+		<c:forEach var="listValue" items="${users}">
+			<li>${listValue}</li>
+		</c:forEach>
+	</ul>
 
-    </c:if>
-
-	<c:if test="${not empty lists}">
-
-		<ul>
-			<c:forEach var="listValue" items="${users}">
-				<li>${listValue}</li>
-			</c:forEach>
-		</ul>
-
-	</c:if>
-
-	<br/><a href = "logout\">Wyloguj!</a>
+	<br/><a href = "logout">Wyloguj!</a>
 </body>
 </html>
