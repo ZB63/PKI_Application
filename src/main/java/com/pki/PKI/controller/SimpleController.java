@@ -45,7 +45,7 @@ public class SimpleController {
         model.addObject("users", users);
 
         //return "Zalogowano jako: " + email + "<br/><a href = \"logout\">Wyloguj!</a>";
-        return "redirect:/content";
+        return "content";
     }
 
     @GetMapping(value="/logout")
@@ -54,6 +54,6 @@ public class SimpleController {
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/index";
+        return "index";
     }
 }
