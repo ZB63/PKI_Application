@@ -1,9 +1,9 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <body>
-	<h2>Spring MVC and List Example</h2>
+	<h2>PKI Application</h2>
 
-    <h1>Witaj ${email}!</h1>
+    <h2>Witaj ${email}!</h2>
 
 	<ul>
 		<c:forEach var="listValue" items="${users}">
