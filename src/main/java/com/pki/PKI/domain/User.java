@@ -13,6 +13,13 @@ public class User {
         this.name = name;
     }
 
+    public User(String name, String joined, String lastvisit, Long counter) {
+        this.name = name;
+        this.joined = joined;
+        this.lastvisit = lastvisit;
+        this.counter = counter;
+    }
+
     @Id
     @GeneratedValue
     @Column(name="id")
