@@ -28,4 +28,12 @@ public class Test {
     public void setValue(String text) {
         this.text = text;
     }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "id=" + id +
+                ", text='" + text + '\'' +
+                '}';
+    }
 }

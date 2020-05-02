@@ -76,4 +76,15 @@ public class User {
     public void setCounter(Long counter) {
         this.counter = counter;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", joined='" + joined + '\'' +
+                ", lastvisit='" + lastvisit + '\'' +
+                ", counter=" + counter +
+                '}';
+    }
 }

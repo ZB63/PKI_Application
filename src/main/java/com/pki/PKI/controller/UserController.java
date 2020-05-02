@@ -22,14 +22,14 @@ public class UserController {
     TestRepository testRepository;
 
     @GetMapping("/users")
-    public String getAllUsers() {
-        //return userRepository.findAll();
-        return userRepository.findAll().toString();
+    public List<User> getAllUsers() {
+        List<User> users = userRepository.findAll();
+        return users;
     }
 
     @GetMapping("/test")
     public String getAllTests() {
-        return testRepository.findAll().toString();
+        return testRepository.findAll().get(0).toString();
     }
 
 }
