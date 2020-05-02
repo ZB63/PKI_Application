@@ -18,5 +18,7 @@
 		</ul>
 
 	</c:if>
+
+	<br/><a href = "logout\">Wyloguj!</a>
 </body>
 </html>

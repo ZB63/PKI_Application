@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,11 +17,16 @@ import java.io.IOException;
 import java.security.Principal;
 import java.util.List;
 
-@RestController
+@Controller
 public class SimpleController {
 
     @Autowired
     UserRepository userRepository;
+
+    @GetMapping("/")
+    public String home() {
+        return "index";
+    }
 
     @GetMapping(value = "/content")
     public String user(Principal principal) throws IOException {
@@ -40,7 +45,7 @@ public class SimpleController {
         model.addObject("users", users);
 
         //return "Zalogowano jako: " + email + "<br/><a href = \"logout\">Wyloguj!</a>";
-        return "redirect:/content.jsp";
+        return "redirect:/content";
     }
 
     @GetMapping(value="/logout")
@@ -49,6 +54,6 @@ public class SimpleController {
         if (auth != null){
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
-        return "redirect:/";
+        return "redirect:/index";
     }
 }
