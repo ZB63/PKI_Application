@@ -40,7 +40,7 @@ public class SimpleController {
         model.addObject("users", users);
 
         //return "Zalogowano jako: " + email + "<br/><a href = \"logout\">Wyloguj!</a>";
-        return "redirect:/content";
+        return "redirect:/content.jsp";
     }
 
     @GetMapping(value="/logout")
